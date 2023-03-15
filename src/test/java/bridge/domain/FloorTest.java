@@ -54,6 +54,16 @@ class FloorTest {
         }
     }
 
+    @DisplayName("잘못된 입력")
+    @ParameterizedTest(name = "입력한 상태가 U, D가 아니라면 예외")
+    @CsvSource(value = {"D:ㅁㄻㄴㅇㄹ", "U:u", "D: 2", "U:down"}, delimiter = ':')
+    void badInput(String status, String input) {
+        Floor floor = new Floor(status);
+        assertThrows(IllegalArgumentException.class, () -> {
+            floor.isSafe(input);
+        });
+    }
+
 //    @Nested
 //    @DisplayName("완전 간단 테스트")
 //    class test {
