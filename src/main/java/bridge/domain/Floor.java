@@ -19,6 +19,7 @@ public class Floor {
     }
 
     public boolean isSafe(String input) {
+        validateStatus(input);
         return this.status.equals(input);
     }
 
