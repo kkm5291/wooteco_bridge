@@ -9,12 +9,12 @@ public class Bridge {
         this.floors = floors;
     }
 
-    private boolean isSafe(int index, String input) {
+    public boolean isSafe(int index, String input) {
         Floor floor = floors.get(index);
         return floor.isSafe(input);
     }
 
-    private int size() {
+    public int size() {
         return floors.size();
     }
 
