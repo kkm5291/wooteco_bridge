@@ -1,5 +1,6 @@
 package bridge.domain;
 
+import static bridge.util.ErrorMessage.INVALID_INPUT_VALUE;
 public class Floor {
     private static final String UP_STAIR = "U";
     private static final String DOWN_STAIR = "D";
@@ -14,7 +15,7 @@ public class Floor {
 
     private void validateStatus(String status) {
         if (isNotStatus(status)) {
-            throw new IllegalArgumentException("[ERROR]");
+            throw new IllegalArgumentException(INVALID_INPUT_VALUE.getMessage());
         }
     }
 
